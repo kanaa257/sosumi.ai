@@ -1,0 +1,24 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sosumi-ai",
+  "routes": [
+    {
+      "pattern": "sosumi.ai",
+      "custom_domain": true
+    }
+  ],
+  "main": "src/index.ts",
+  "compatibility_date": "2025-08-23",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./public"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

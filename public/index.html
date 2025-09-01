@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sosumi.ai - Apple Docs for LLMs</title>
+    <meta name="description"
+        content="sosumi.ai provides Apple Developer documentation in an AI-readable format by converting JavaScript-rendered pages into Markdown.">
+    <meta name="author" content="sosumi.ai">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://sosumi.ai/">
+
+    <meta property="og:title" content="sosumi.ai - Apple Docs for LLMs">
+    <meta property="og:description"
+        content="sosumi.ai provides Apple Developer documentation in an AI-readable format by converting JavaScript-rendered pages into Markdown.">
+    <meta property="og:url" content="https://sosumi.ai/">
+    <meta property="og:site_name" content="sosumi.ai">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="sosumi.ai - Apple Docs for LLMs">
+    <meta name="twitter:description"
+        content="sosumi.ai provides Apple Developer documentation in an AI-readable format by converting JavaScript-rendered pages into Markdown.">
+
+    <meta name="theme-color" content="#d68d6e" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#ec9b7f" media="(prefers-color-scheme: dark)">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="sosumi.ai">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="/favicon.ico">
+
+    <link rel="preload" href="/sosumi.m4a" as="audio" type="audio/mp4">
+
+    <style>
+        :root {
+            color-scheme: light dark;
+
+            --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+            --font-mono: 'SF Mono', monospace;
+
+            --text: oklch(15% 0 0);
+            --text-secondary: oklch(35% 0 0);
+            --text-tertiary: oklch(55% 0 0);
+
+            --surface: oklch(98% 0 0);
+            --surface-inset: oklch(95% 0.02 70);
+            --surface-inset-deep: oklch(90% 0.05 70);
+
+            --border: oklch(20% 0.1 70);
+
+            --link: oklch(65% 0.15 70);
+            --accent: oklch(78% 0.18 70);
+            --accent-hover: oklch(85% 0.2 70);
+
+            --code-key-color: oklch(60% 0.15 70);
+            --code-string-color: oklch(55% 0.2 70);
+            --code-punctuation-color: var(--text-tertiary);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text: oklch(92% 0.02 70);
+                --text-secondary: oklch(75% 0.05 70);
+                --text-tertiary: oklch(55% 0.08 70);
+
+                --surface: oklch(18% 0 0);
+                --surface-inset: oklch(12% 0.02 70);
+                --surface-inset-deep: oklch(15% 0.05 70);
+
+                --border: oklch(25% 0.1 70);
+                --accent: oklch(85% 0.2 70);
+                --accent-hover: oklch(92% 0.22 70);
+
+                --code-key-color: oklch(75% 0.15 70);
+                --code-string-color: oklch(70% 0.2 70);
+            }
+        }
+
+        html {
+            font-size: 100%;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text);
+            background-color: var(--surface);
+            max-width: 52rem;
+            margin: 3rem auto;
+            padding: 1.5rem;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        h1 a {
+            color: var(--text) !important;
+
+        }
+
+        h1 svg {
+            width: 2rem;
+            height: 2rem;
+            color: var(--accent);
+            cursor: cell;
+            user-select: none;
+        }
+
+        h2 {
+            margin-top: 1.5625rem;
+            margin-bottom: 0.625rem;
+            color: var(--text-secondary);
+        }
+
+        h3 {
+            margin-top: 1.5625rem;
+            margin-bottom: 0.625rem;
+            color: var(--text-secondary);
+        }
+
+        dl code {
+            padding: 0;
+        }
+
+        dt {
+            font-weight: 500;
+        }
+
+        dt code {
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+            margin-left: -0.25rem;
+        }
+
+        dd {
+            margin-left: 0;
+        }
+
+        dd+dt {
+            margin-top: 0.9375rem;
+        }
+
+        #mcp ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding-left: 1rem;
+            list-style: none;
+        }
+
+        #mcp dd {
+            color: var(--text-secondary);
+        }
+
+        #mcp dd strong {
+            font-weight: 400;
+            color: var(--text);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.2;
+        }
+
+        .tagline span {
+            display: inline-block;
+        }
+
+        .tagline em {
+            font-size: smaller;
+            opacity: 0.8;
+        }
+
+        code {
+            background: var(--surface-inset);
+            padding: 0.125rem;
+            font-family: var(--font-mono);
+            word-break: break-all;
+            overflow-wrap: break-word;
+        }
+
+        main header {
+            margin-bottom: 2rem;
+        }
+
+        code a {
+            word-break: break-word;
+            overflow-wrap: anywhere;
+        }
+
+        h4 {
+            margin-top: 1.5625rem;
+            margin-bottom: 0.625rem;
+            color: var(--text-secondary);
+        }
+
+        q {
+            font-style: italic;
+        }
+
+        footer {
+            margin-top: 3.75rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+            display: flex;
+            flex-direction: row;
+            gap: 1.25rem;
+        }
+
+        footer #disclaimer {
+            flex: 1;
+        }
+
+        footer aside {
+            flex: 1;
+        }
+
+        main>section {
+            border-top: 1px solid var(--border);
+            padding-bottom: 1rem;
+            padding-top: 2rem;
+        }
+
+        section header {
+            background: var(--surface-inset);
+            padding: 1.25rem;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        pre code .key {
+            color: var(--code-key-color);
+        }
+
+        pre code .string {
+            color: var(--code-string-color);
+        }
+
+        pre code .punctuation {
+            color: var(--code-punctuation-color);
+        }
+
+        pre code .sosumi-entry {
+            background-color: var(--surface-inset-deep);
+            display: block;
+            border-radius: 0.5rem;
+        }
+
+        pre code .dimmed {
+            opacity: 0.6;
+        }
+
+        section header> :first-child {
+            margin-top: 0;
+        }
+
+        #disclaimer {
+            color: var(--text-secondary);
+        }
+
+        #haiku {
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            flex-wrap: wrap;
+            position: relative;
+            flex-direction: row-reverse;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            letter-spacing: 0.1em;
+        }
+
+        #haiku span {
+            writing-mode: vertical-rl;
+        }
+
+        #haiku figcaption {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        #haiku figcaption ruby {
+            line-height: 1;
+        }
+
+        #haiku figcaption rt {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                display: block;
+            }
+
+            #haiku {
+                font-size: 1.5rem;
+                padding-top: 2rem;
+                margin: 1rem auto;
+            }
+
+            #haiku figcaption {
+                position: static;
+                margin-right: 1rem;
+                height: auto;
+            }
+        }
+
+        /* Custom text selection colors */
+        ::selection {
+            background-color: var(--accent);
+            color: var(--surface);
+        }
+
+        ::-moz-selection {
+            background-color: var(--accent);
+            color: var(--surface);
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const logo = document.querySelector('.logo');
+            const audio = new Audio('./sosumi.m4a');
+
+            logo.addEventListener('click', function () {
+                audio.currentTime = 0; // Reset to beginning
+                audio.play().catch(function (error) {
+                    console.log('Audio playback failed:', error);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>
+            <a href="/" accesskey="1">sosumi.ai</a>
+
+            <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img"
+                aria-label="sosumi.ai logo" title="You couldn't sue a face like this, right?">
+                <!-- https://www.streamlinehq.com/icons/pixel?icon=ico_girK3NdW2U5HOWO0 -->
+                <path fill="currentColor"
+                    d="M21.72 4.575V0H10.29v1.14H5.715v1.148H2.287v8.002h-1.14v2.28H0V24h24V4.575zM5.715 22.86H1.148v-6.863h4.567zm0-8.002h-2.28V3.428h2.28zm1.148-12.57h3.427v1.14H8.003v11.43h-1.14zm3.427 2.287v10.282H9.15V4.575zm1.14 18.285H6.863v-6.863h4.567zm11.43 0H12.578v-8.003H11.43V1.14h9.143v3.435h-3.428v1.14h5.715z" />
+                <path fill="currentColor"
+                    d="M19.433 15.997h1.14v1.148h-1.14zM19.433 13.717h1.14v1.14h-1.14zM17.145 17.145h2.287v1.14h-2.287zM16.005 15.997h1.14v1.148h-1.14zM16.005 13.717h1.14v1.14h-1.14zM16.005 5.715h1.14v2.287h-1.14zM14.857 8.002h1.148v2.288h-1.147zM13.717 10.29h1.14v2.28h-1.14zM13.717 2.287h1.14v1.14h-1.14zM12.578 12.57h1.14v2.287h-1.14zM8.002 18.285h2.288v2.287H8.003zM2.287 18.285h2.288v2.287H2.287z" />
+            </svg>
+        </h1>
+        <p class="tagline">
+            <span>Making Apple docs AI-readable.</span>
+            <wbr />
+            <span>So sue me.</span>
+            <br />
+            <em>(Please don't actually sue me)</em>
+        </p>
+    </header>
+
+    <main>
+        <header>
+            <p>Ever notice Claude struggling to write Swift code? It might not be their fault!</p>
+            <p>
+                Apple Developer docs are locked behind JavaScript,
+                making them invisible to most LLMs.
+                If they try to fetch it, all they see is
+                <q>This page requires JavaScript. Please turn on JavaScript in your browser and refresh the page to view
+                    its content.</q>
+                <br />
+            </p>
+            <p>
+                This service translates Apple Developer documentation pages into AI-friendly Markdown.
+            </p>
+        </header>
+
+        <section id="http">
+            <header>
+                <h2>HTTP Usage</h2>
+                <p>Replace <code>developer.apple.com</code> with <code>sosumi.ai</code>:</p>
+
+                <dl>
+                    <dt>Original</dt>
+                    <dd>
+                        <code><a href="https://developer.apple.com/documentation/swift/array"
+                            rel="noopener noreferrer">https://&#8203;developer.apple.com&#8203;/&#8203;documentation&#8203;/&#8203;swift&#8203;/&#8203;array</a></code>
+                    </dd>
+                    <dt>AI-readable</dt>
+                    <dd>
+                        <code><a
+                            href="https://sosumi.ai/documentation/swift/array">https://&#8203;sosumi.ai&#8203;/&#8203;documentation&#8203;/&#8203;swift&#8203;/&#8203;array</a></code>
+                    </dd>
+                </dl>
+            </header>
+
+            <section class="examples">
+                <h2>Examples</h2>
+                <ul>
+                    <li><a href="/documentation/swift">Swift</a></li>
+                    <li><a href="/documentation/swiftui">SwiftUI</a></li>
+                    <li><a href="/documentation/uikit">UIKit</a></li>
+                    <li><a href="/documentation/xcode">Xcode</a></li>
+                    <li><a href="/documentation/coredata">Core Data</a></li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="mcp">
+            <header>
+                <h2>MCP Usage</h2>
+                <p>
+                    Connect your <abbr title="Model Context Protocol">MCP</abbr> client to
+                    <code>https://sosumi.ai/mcp</code>:
+                </p>
+                <pre><code class="mcp-config"><span class="dimmed"><span class="punctuation">{</span></span>
+<span class="dimmed">  <span class="key">"mcpServers"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span>
+<span class="sosumi-entry">    <span class="key">"sosumi"</span><span class="punctuation">:</span> <span class="punctuation">{</span>
+      <span class="key">"command"</span><span class="punctuation">:</span> <span class="string">"npx"</span><span class="punctuation">,</span>
+      <span class="key">"args"</span><span class="punctuation">:</span> <span class="punctuation">[</span>
+        <span class="string">"-y"</span><span class="punctuation">,</span>
+        <span class="string">"mcp-remote"</span><span class="punctuation">,</span>
+        <span class="string">"https://sosumi.ai/mcp"</span>
+      <span class="punctuation">]</span>
+    <span class="punctuation">}</span></span><span class="dimmed">  <span class="punctuation">}</span></span>
+<span class="dimmed"><span class="punctuation">}</span></span></code></pre>
+            </header>
+
+            <div class="resources">
+                <h3>Available Resources</h3>
+                <ul>
+                    <li>
+                        <dl>
+                            <dt><code>doc://{path}</code></dt>
+                            <dd><strong>Get Apple Developer documentation as markdown</strong>
+                                <br><em>Example: <code>doc://swift/array</code> returns Swift Array documentation</em>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tools">
+                <h3>Available Tools</h3>
+                <ul>
+                    <li>
+                        <dl>
+                            <dt><code>search</code></dt>
+                            <dd><strong>Search Apple Developer documentation</strong>
+                                <br>Parameters: <code>query</code> (string)
+                                <br><em>Returns structured results with titles, URLs, descriptions, breadcrumbs, and
+                                    tags</em>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt><code>fetch</code></dt>
+                            <dd><strong>Fetch Apple Developer documentation by path</strong>
+                                <br>Parameters: <code>path</code> (string) - Full or relative documentation path
+                                <br><em>Returns documentation content as markdown</em>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <div id="disclaimer">
+            <p>
+                <strong>Disclaimer:</strong>
+                This is an unofficial, independent project
+                and is not affiliated with or endorsed by Apple Inc.
+                "Apple", "Xcode", and related marks are trademarks of Apple Inc.
+            </p>
+            <p>
+                <strong>Open Source:</strong>
+                This project is open source and available on
+                <a href="https://github.com/NSHipster/sosumi.ai" rel="noopener noreferrer">GitHub</a>.
+            </p>
+            <p>
+                This service is an accessibility-first, on-demand renderer.
+                It converts a single Apple Developer page to Markdown only when requested by a user.
+                It does not crawl, spider, or bulk download;
+                it does not attempt to bypass authentication or security;
+                and it implements rate limiting to avoid imposing unreasonable load.
+            </p>
+            <p>
+                Content is fetched transiently and may be cached briefly to improve performance.
+                No permanent archives are maintained.
+                All copyrights and other rights in the underlying content remain with Apple Inc.
+                Each page links back to the original source.
+            </p>
+            <p>
+                Your use of this service must comply with Apple's Terms of Use and applicable law.
+                You are solely responsible for how you access and use Apple's content through this tool.
+                Do not use this service to circumvent technical measures or for redistribution.
+            </p>
+            <p>
+                <strong>Contact:</strong> <a href="mailto:info@sosumi.ai">info@sosumi.ai</a>
+            </p>
+        </div>
+
+        <aside>
+            <figure id="haiku" lang="ja"
+                title="Sosumi: With plain ink I write / Apple's wisdom to machines— / Bridge-building autumn">
+                <span>素墨で書く</span>
+                <span>林檎の知恵を機械へ</span>
+                <span>橋渡す秋</span>
+                <figcaption>
+                    <ruby>素墨<rt>そすみ</rt></ruby>
+                </figcaption>
+            </figure>
+        </aside>
+    </footer>
+</body>
+
+</html>

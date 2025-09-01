@@ -1,0 +1,32 @@
+{
+  "name": "sosumi.ai",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "format": "biome format --write .",
+    "lint": "biome lint --write .",
+    "check": "biome check --write .",
+    "check:ci": "biome check ."
+  },
+  "dependencies": {
+    "@hono/mcp": "^0.1.2",
+    "@modelcontextprotocol/sdk": "^1.17.4",
+    "hono": "^4.9.4",
+    "zod": "^3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.2",
+    "@cloudflare/puppeteer": "^1.0.4",
+    "@cloudflare/vitest-pool-workers": "^0.8.68",
+    "@vitest/ui": "^3.2.4",
+    "vitest": "^3.2.4",
+    "wrangler": "^4.32.0"
+  }
+}
